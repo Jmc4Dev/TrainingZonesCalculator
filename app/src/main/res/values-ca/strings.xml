@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zones d\'Entrenament</string>
+    <string name="select_option">Selecciona una opció</string>
+    <string name="max_hr">FC Màx</string>
+    <string name="lthr">Llindar An.</string>
+    <string name="ftp">FTP</string>
+    <string name="help">Ajuda</string>
+    <string name="exit">Sortir</string>
+</resources>
