@@ -23,6 +23,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.training.trainingzonescalculator.ui.theme.TrainingZonesCalculatorTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,6 +44,7 @@ class MainActivity : ComponentActivity() {
 fun TrainingZonesCalcApp() {
     val activity = (LocalContext.current as? Activity)
     var expanded by remember { mutableStateOf(false)}
+    var selectedOption by remember { mutableStateOf(1)}
 
     // A surface container using the 'background' color from the theme
     Surface(color = colorResource(id = R.color.light_grey)) {
@@ -68,38 +72,33 @@ fun TrainingZonesCalcApp() {
                         onDismissRequest = { expanded = false }
                     ) {
                         DropdownMenuItem(onClick = {
-                            /* Handle refresh! */
+                            selectedOption = 1
+                            expanded = false
                         }) {
                             Text(
-                                text = stringResource(id = R.string.max_hr),
+                                text = stringResource(id = R.string.zones),
                                 fontSize = 15.sp
                             )
                         }
                         DropdownMenuItem(onClick = {
-                            /* Handle settings! */
+                            selectedOption = 2
+                            expanded = false
                         }) {
                             Text(
-                                text = stringResource(id = R.string.lthr),
-                                fontSize = 15.sp)
-                        }
-                        DropdownMenuItem(onClick = {
-                            /* Handle send feedback! */
-                        }) {
-                            Text(
-                                text = stringResource(id = R.string.ftp),
-                                fontSize = 15.sp)
-                        }
-                        //Divider()
-                        DropdownMenuItem(onClick = {
-                            /* Handle send feedback! */
-                        }) {
-                            Text(
-                                text = stringResource(id = R.string.help),
+                                text = stringResource(id = R.string.bmi),
                                 fontSize = 15.sp)
                         }
                         Divider(
                             color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f),
                             thickness = 2.dp)
+                        DropdownMenuItem(onClick = {
+                            selectedOption = 3
+                            expanded = false
+                        }) {
+                            Text(
+                                text = stringResource(id = R.string.help),
+                                fontSize = 15.sp)
+                        }
                         DropdownMenuItem(onClick = {
                             activity?.finish()
                         }) {
@@ -116,10 +115,21 @@ fun TrainingZonesCalcApp() {
                     }
                 }
             )
+
+            ShowSelectedScreen(selectedOption)
         }
     }
 }
 
+@Composable
+private fun ShowSelectedScreen(selectedOption: Int) {
+    when (selectedOption) {
+        1 -> ZonesScreen()
+        2 -> BmiScreen()
+        3 -> HelpScreen()
+        else -> ZonesScreen()
+    }
+}
 
 @Preview(showBackground = true)
 @Composable

@@ -1,9 +1,32 @@
 <resources>
     <string name="app_name">Training Zones</string>
+
     <string name="select_option">Select an option</string>
     <string name="max_hr">Max. HR</string>
     <string name="lthr">LTHR</string>
-    <string name="ftp">FTP</string>
+    <string name="ftp" translatable="false">FTP</string>
+    <string name="max_hr_long">Maximum Heart Rate</string>
+    <string name="lthr_long">Lactate Threshold</string>
+    <string name="ftp_long">Functional Threshold Power</string>
+    <string name="bmi">Body Mass Index</string>
+    <string name="your_bmi">Your BMI</string>
+    <string name="zones">Zones</string>
     <string name="help">Help</string>
+    <string name="help_text" translatable="false">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim tortor at auctor urna nunc id cursus metus aliquam. Non arcu risus quis varius. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Eu feugiat pretium nibh ipsum consequat nisl vel pretium. Integer feugiat scelerisque varius morbi. Eu non diam phasellus vestibulum lorem. Amet nulla facilisi morbi tempus iaculis urna id. Vel orci porta non pulvinar. Faucibus a pellentesque sit amet porttitor eget. A erat nam at lectus. Dolor sit amet consectetur adipiscing. Massa eget egestas purus viverra accumsan. Neque volutpat ac tincidunt vitae semper. Elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Lacinia quis vel eros donec ac odio tempor orci.
+    </string>
     <string name="exit">Exit</string>
+
+    <string name="choose_system">Choose the system</string>
+    <string name="metric">Metric</string>
+    <string name="imperial" translatable="false">Imperial</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="pounds">(lb)</string>
+    <string name="kg">(kg)</string>
+    <string name="inches">(in)</string>
+    <string name="centimeters" translatable="false">(cm)</string>
+    <string name="calculate">Calculate</string>
+    <string name="wrong_data">Wrong data</string>
+
 </resources>
