@@ -10,6 +10,7 @@
     <string name="ftp_long">Functional Threshold Power</string>
     <string name="bmi">Body Mass Index</string>
     <string name="your_bmi">Your BMI</string>
+    <string name="your_zones">Your Training Zones</string>
     <string name="zones">Zones</string>
     <string name="help">Help</string>
     <string name="help_text" translatable="false">
@@ -28,5 +29,7 @@
     <string name="centimeters" translatable="false">(cm)</string>
     <string name="calculate">Calculate</string>
     <string name="wrong_data">Wrong data</string>
+    <string name="min_x_km" translatable="false">(mm:ss)</string>
+    <string name="hr">(bpm)</string>
 
 </resources>

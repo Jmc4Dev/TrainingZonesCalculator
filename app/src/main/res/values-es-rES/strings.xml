@@ -21,4 +21,6 @@
     <string name="choose_system">Escoje el sistema</string>
     <string name="metric">Métrico</string>
     <string name="wrong_data">Datos incorrectos</string>
+    <string name="hr">(lpm)</string>
+    <string name="your_zones">Zonas de Entrenamiento</string>
 </resources>

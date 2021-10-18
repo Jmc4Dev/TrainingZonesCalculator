@@ -13,6 +13,7 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -30,6 +31,7 @@ import com.training.trainingzonescalculator.ui.theme.TrainingZonesCalculatorThem
 
 class MainActivity : ComponentActivity() {
 
+    @ExperimentalComposeUiApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -40,6 +42,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@ExperimentalComposeUiApi
 @Composable
 fun TrainingZonesCalcApp() {
     val activity = (LocalContext.current as? Activity)
@@ -121,6 +124,7 @@ fun TrainingZonesCalcApp() {
     }
 }
 
+@ExperimentalComposeUiApi
 @Composable
 private fun ShowSelectedScreen(selectedOption: Int) {
     when (selectedOption) {
@@ -131,6 +135,7 @@ private fun ShowSelectedScreen(selectedOption: Int) {
     }
 }
 
+@ExperimentalComposeUiApi
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
