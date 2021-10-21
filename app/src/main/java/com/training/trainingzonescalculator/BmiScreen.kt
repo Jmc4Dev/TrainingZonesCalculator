@@ -56,38 +56,28 @@ fun BmiScreen() {
 
     Column(
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .padding(top = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-        Text(
-            text = stringResource(id = R.string.bmi),
-            modifier = Modifier
-                .padding(16.dp)
-                .fillMaxWidth(),
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color.Black,
-            textAlign = TextAlign.Center
-        )
-
         Column(
             modifier = Modifier
                 .selectableGroup()
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .wrapContentWidth(align = Alignment.CenterHorizontally),
+            horizontalAlignment = Alignment.Start
         ) {
             radioOptions.forEach { text ->
                 Row(
                     Modifier
-                        .wrapContentWidth(align = Alignment.CenterHorizontally)
-                        .height(35.dp)
+                        .wrapContentWidth(align = Alignment.Start)
+                        .height(36.dp)
                         .selectable(
                             selected = (text == selectedOption),
                             onClick = { onOptionSelected(text) },
                             role = Role.RadioButton
                         )
-                        .padding(horizontal = 16.dp),
+                        .padding(horizontal = 12.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     RadioButton(
@@ -144,7 +134,7 @@ fun BmiScreen() {
             singleLine = true,
             keyboardActions = KeyboardActions(
                 onDone = { focusManager.clearFocus() },
-                onNext = { focusManager.moveFocus(FocusDirection.Down) }),
+                onNext = { focusManager.clearFocus() }),
             keyboardOptions = KeyboardOptions.Default.copy(
                 imeAction = ImeAction.Done,
                 keyboardType = KeyboardType.Number
@@ -182,9 +172,9 @@ fun BmiScreen() {
         Text(
             text = bmi,
             modifier = Modifier
-                .padding(8.dp)
+                .padding(24.dp)
                 .fillMaxWidth(),
-            fontSize = 30.sp,
+            fontSize = 82.sp,
             fontWeight = FontWeight.Bold,
             color = Color.Black,
             textAlign = TextAlign.Center

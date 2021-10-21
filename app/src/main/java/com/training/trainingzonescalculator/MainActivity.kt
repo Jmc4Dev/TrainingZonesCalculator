@@ -60,8 +60,13 @@ fun TrainingZonesCalcApp() {
             TopAppBar(
                 title = {
                     Text(
-                        text = stringResource(id = R.string.app_name),
-                        fontSize = 20.sp
+                        text =
+                        if (selectedOption == 2)
+                            stringResource(id = R.string.bmi)
+                        else
+                            stringResource(id = R.string.app_name)
+                        ,
+                        fontSize = 18.sp
                     )
                 },
                 navigationIcon = {

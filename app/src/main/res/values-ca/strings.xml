@@ -23,4 +23,7 @@
     <string name="wrong_data">Dades incorrectes</string>
     <string name="hr">(ppm)</string>
     <string name="your_zones">Zones d\'Entrenament</string>
+    <string name="bike">Bici</string>
+    <string name="run">Correr</string>
+    <string name="watts">Watts</string>
 </resources>

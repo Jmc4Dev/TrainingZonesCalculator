@@ -30,6 +30,9 @@
     <string name="calculate">Calculate</string>
     <string name="wrong_data">Wrong data</string>
     <string name="min_x_km" translatable="false">(mm:ss)</string>
+    <string name="watts">Watts</string>
     <string name="hr">(bpm)</string>
+    <string name="bike">Bike</string>
+    <string name="run">Run</string>
 
 </resources>
