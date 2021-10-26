@@ -1,13 +1,9 @@
 <resources>
     <string name="app_name">Training Zones</string>
 
-    <string name="select_option">Select an option</string>
     <string name="max_hr">Max. HR</string>
     <string name="lthr">LTHR</string>
     <string name="ftp" translatable="false">FTP</string>
-    <string name="max_hr_long">Maximum Heart Rate</string>
-    <string name="lthr_long">Lactate Threshold</string>
-    <string name="ftp_long">Functional Threshold Power</string>
     <string name="bmi">Body Mass Index</string>
     <string name="your_bmi">Your BMI</string>
     <string name="your_zones">Your Training Zones</string>
@@ -18,7 +14,6 @@
     </string>
     <string name="exit">Exit</string>
 
-    <string name="choose_system">Choose the system</string>
     <string name="metric">Metric</string>
     <string name="imperial" translatable="false">Imperial</string>
     <string name="height">Height</string>

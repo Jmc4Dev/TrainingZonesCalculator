@@ -85,6 +85,7 @@ fun TrainingZonesCalcApp() {
                         }) {
                             Text(
                                 text = stringResource(id = R.string.zones),
+                                color = Color.Black,
                                 fontSize = 15.sp
                             )
                         }
@@ -94,6 +95,7 @@ fun TrainingZonesCalcApp() {
                         }) {
                             Text(
                                 text = stringResource(id = R.string.bmi),
+                                color = Color.Black,
                                 fontSize = 15.sp)
                         }
                         Divider(
@@ -105,6 +107,7 @@ fun TrainingZonesCalcApp() {
                         }) {
                             Text(
                                 text = stringResource(id = R.string.help),
+                                color = Color.Black,
                                 fontSize = 15.sp)
                         }
                         DropdownMenuItem(onClick = {
@@ -112,6 +115,7 @@ fun TrainingZonesCalcApp() {
                         }) {
                             Text(
                                 text = stringResource(id = R.string.exit),
+                                color = Color.Black,
                                 fontSize = 15.sp)
                         }
                     }

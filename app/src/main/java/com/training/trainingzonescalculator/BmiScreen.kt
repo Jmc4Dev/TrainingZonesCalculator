@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
@@ -104,7 +105,8 @@ fun BmiScreen() {
                         stringResource(id = R.string.height) + " " + stringResource(id = R.string.inches)
                     } else {
                         stringResource(id = R.string.height) + " " + stringResource(id = R.string.centimeters)
-                    }
+                    },
+                    color = colorResource(id = R.color.purple_700)
                 )
             },
             singleLine = true,
@@ -128,7 +130,8 @@ fun BmiScreen() {
                         stringResource(id = R.string.weight) + " " + stringResource(id = R.string.pounds)
                     } else {
                         stringResource(id = R.string.weight) + " " + stringResource(id = R.string.kg)
-                    }
+                    },
+                    color = colorResource(id = R.color.purple_700)
                 )
             },
             singleLine = true,

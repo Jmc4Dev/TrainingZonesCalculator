@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Zones d\'Entrenament</string>
-    <string name="select_option">Selecciona una opció</string>
     <string name="max_hr">FC Màx</string>
     <string name="lthr">Llindar An.</string>
     <string name="help">Ajuda</string>
     <string name="exit">Sortir</string>
-    <string name="max_hr_long">Freqüència Cardíaca Màxima</string>
-    <string name="lthr_long">Llindar Anaeròbic</string>
-    <string name="ftp_long">Llindar de Potència Funciona (FTP)</string>
     <string name="zones">Zones</string>
     <string name="bmi">Índex de Massa Corporal</string>
     <string name="height">Alçada</string>
@@ -18,7 +14,6 @@
     <string name="inches">(polz.)</string>
     <string name="your_bmi">El teu IMC</string>
     <string name="calculate">Calcular</string>
-    <string name="choose_system">Tria el sistema</string>
     <string name="metric">Mètric</string>
     <string name="wrong_data">Dades incorrectes</string>
     <string name="hr">(ppm)</string>

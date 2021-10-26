@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Zonas de Entrenamiento</string>
-    <string name="select_option">Selecciona una opción</string>
     <string name="max_hr">FC Máx</string>
     <string name="lthr">Umbral An.</string>
     <string name="help">Ayuda</string>
     <string name="exit">Salir</string>
-    <string name="max_hr_long">Frequencia Cardiaca Máxima</string>
-    <string name="lthr_long">Umbral Anaeróbico</string>
-    <string name="ftp_long">Umbral de Potencia Funcional (FTP)</string>
     <string name="zones">Zonas</string>
     <string name="bmi">Índice de Masa Corporal</string>
     <string name="height">Altura</string>
@@ -18,7 +14,6 @@
     <string name="inches">(pulg.)</string>
     <string name="your_bmi">Tu IMC</string>
     <string name="calculate">Calcular</string>
-    <string name="choose_system">Escoje el sistema</string>
     <string name="metric">Métrico</string>
     <string name="wrong_data">Datos incorrectos</string>
     <string name="hr">(lpm)</string>
