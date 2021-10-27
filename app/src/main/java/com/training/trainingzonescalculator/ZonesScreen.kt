@@ -114,6 +114,7 @@ fun ZonesScreen() {
     var minutes by remember { mutableStateOf("") }
     var seconds by remember { mutableStateOf("") }
     var value by remember { mutableStateOf(ArrayList<String>()) }
+    value = arrayListOf( "0", "0" )
     val maxHrStr = stringResource(id = R.string.max_hr)
     val lthrStr = stringResource(id = R.string.lthr)
     val ftpStr = stringResource(id = R.string.ftp)
@@ -250,6 +251,7 @@ fun ZonesScreen() {
                 horizontalArrangement = Arrangement.Center
             )
         } else {
+            Log.i("ZONES_LOG", "4 Minutes: $minutes, seconds: $seconds")
             TextField(
                 modifier = Modifier
                     .padding(top = 16.dp),
