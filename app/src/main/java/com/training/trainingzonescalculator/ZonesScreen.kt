@@ -24,7 +24,6 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.TextStyle
@@ -35,6 +34,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.training.trainingzonescalculator.models.MinMaxPairs
 import com.training.trainingzonescalculator.models.ZoneDetails
 import com.training.trainingzonescalculator.ui.theme.TrainingZonesCalculatorTheme
 import kotlin.math.roundToInt
@@ -113,8 +113,6 @@ fun ZonesScreen() {
     var zones by remember { mutableStateOf(ArrayList<ZoneDetails>()) }
     var minutes by remember { mutableStateOf("") }
     var seconds by remember { mutableStateOf("") }
-    var value by remember { mutableStateOf(ArrayList<String>()) }
-    value = arrayListOf( "0", "0" )
     val maxHrStr = stringResource(id = R.string.max_hr)
     val lthrStr = stringResource(id = R.string.lthr)
     val ftpStr = stringResource(id = R.string.ftp)
@@ -239,19 +237,69 @@ fun ZonesScreen() {
         }
 
         if (selectedOption == stringResource(id = R.string.ftp) && sport == "Run") {
-            Log.i("ZONES_LOG", "4 Minutes: $minutes, seconds: $seconds")
-            value = arrayListOf(minutes, seconds)
-            PacePicker(
+            Log.i("ZONES_LOG", "3 Minutes: $minutes, seconds: $seconds")
+            Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(start = 16.dp, end = 16.dp, top = 16.dp),
-                value = value,
-                onValueChange = { value = it },
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center
-            )
+            ) {
+                TextField(
+                    modifier = Modifier
+                        .fillMaxWidth(0.27f)
+                        .padding(end = 24.dp),
+                    value = minutes,
+                    onValueChange = {
+                        if (it.length <= 2) {
+                            minutes = it
+                        }
+                    },
+                    label = {
+                        Text(
+                            text = "min",
+                            color = colorResource(id = R.color.purple_700)
+                        )
+                    },
+                    singleLine = true,
+                    textStyle = TextStyle(fontSize = 24.sp, textAlign = TextAlign.Center),
+                    keyboardActions = KeyboardActions(
+                        onDone = { focusManager.moveFocus(FocusDirection.Down) },
+                        onNext = { focusManager.moveFocus(FocusDirection.Down) }),
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        imeAction = ImeAction.Done,
+                        keyboardType = KeyboardType.Number
+                    )
+                )
+
+                TextField(
+                    modifier = Modifier
+                        .fillMaxWidth(0.27f),
+                    value = seconds,
+                    onValueChange = {
+                        if (it.length <= 2) {
+                            seconds = it
+                        }
+                    },
+                    label = {
+                        Text(
+                            text = "sec",
+                            color = colorResource(id = R.color.purple_700)
+                        )
+                    },
+                    singleLine = true,
+                    textStyle = TextStyle(fontSize = 24.sp, textAlign = TextAlign.Center),
+                    keyboardActions = KeyboardActions(
+                        onDone = { focusManager.clearFocus() },
+                        onNext = { focusManager.clearFocus() }),
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        imeAction = ImeAction.Done,
+                        keyboardType = KeyboardType.Number
+                    )
+                )
+            }
         } else {
-            Log.i("ZONES_LOG", "4 Minutes: $minutes, seconds: $seconds")
+            Log.i("ZONES_LOG", "5 Minutes: $minutes, seconds: $seconds")
             TextField(
                 modifier = Modifier
                     .padding(top = 16.dp),
@@ -308,8 +356,6 @@ fun ZonesScreen() {
                         ftpStr -> 3
                         else -> 0
                     }
-                    minutes = value[0]
-                    seconds = value[1]
                     zones = calculateZones(userInput, calcType, sport, minutes, seconds)
                 },
             fontSize = 20.sp,
@@ -388,84 +434,6 @@ fun ZonesScreen() {
                 }
             }
         }
-    }
-}
-
-@ExperimentalComposeUiApi
-@Composable
-fun PacePicker(
-    modifier: Modifier,
-    value: ArrayList<String>,
-    onValueChange: (ArrayList<String>) -> Unit,
-    verticalAlignment: Alignment.Vertical = Alignment.CenterVertically,
-    horizontalArrangement: Arrangement.HorizontalOrVertical = Arrangement.Center
-) {
-    val focusManager = LocalFocusManager.current
-    var minutes by remember { mutableStateOf(value[0]) }
-    var seconds by remember { mutableStateOf(value[1]) }
-
-    Log.i("ZONES_LOG", "3 Minutes: $minutes, seconds: $seconds")
-    Row(
-        modifier = modifier,
-        verticalAlignment = verticalAlignment,
-        horizontalArrangement = horizontalArrangement
-    ) {
-        TextField(
-            modifier = Modifier
-                .fillMaxWidth(0.27f)
-                .padding(end = 24.dp),
-            value = minutes,
-            onValueChange = {
-                if (it.length <= 2) {
-                    minutes = it
-                    value[0] = it
-                }
-            },
-            label = {
-                Text(
-                    text = "min",
-                    color = colorResource(id = R.color.purple_700)
-                )
-            },
-            singleLine = true,
-            textStyle = TextStyle(fontSize = 24.sp, textAlign = TextAlign.Center),
-            keyboardActions = KeyboardActions(
-                onDone = { focusManager.moveFocus(FocusDirection.Down) },
-                onNext = { focusManager.moveFocus(FocusDirection.Down) }),
-            keyboardOptions = KeyboardOptions.Default.copy(
-                imeAction = ImeAction.Done,
-                keyboardType = KeyboardType.Number
-            )
-        )
-
-        TextField(
-            modifier = Modifier
-                .fillMaxWidth(0.27f),
-            value = seconds,
-            onValueChange = {
-                if (it.length <= 2) {
-                    seconds = it
-                    value[1] = it
-                }
-            },
-            label = {
-                Text(
-                    text = "sec",
-                    color = colorResource(id = R.color.purple_700)
-                )
-            },
-            singleLine = true,
-
-            textStyle = TextStyle(fontSize = 24.sp, textAlign = TextAlign.Center),
-            keyboardActions = KeyboardActions(
-                onDone = { focusManager.clearFocus() },
-                onNext = { focusManager.clearFocus() }),
-            keyboardOptions = KeyboardOptions.Default.copy(
-                imeAction = ImeAction.Done,
-                keyboardType = KeyboardType.Number
-            )
-        )
-
     }
 }
 
@@ -557,11 +525,6 @@ private fun obtainZones(
 
     return zonesList
 }
-
-data class MinMaxPairs(
-    var minLimit: Float,
-    var maxLimit: Float
-)
 
 @ExperimentalComposeUiApi
 @Preview(showBackground = true)

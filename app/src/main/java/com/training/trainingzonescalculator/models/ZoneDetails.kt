@@ -8,3 +8,8 @@ data class ZoneDetails(
     var zoneColor: Color,
     var zoneText: String
 )
+
+data class MinMaxPairs(
+    var minLimit: Float,
+    var maxLimit: Float
+)
