@@ -10,10 +10,13 @@
     <string name="zones">Zones</string>
     <string name="help">Help</string>
     <string name="help_text" translatable="false">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim tortor at auctor urna nunc id cursus metus aliquam. Non arcu risus quis varius. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Eu feugiat pretium nibh ipsum consequat nisl vel pretium. Integer feugiat scelerisque varius morbi. Eu non diam phasellus vestibulum lorem. Amet nulla facilisi morbi tempus iaculis urna id. Vel orci porta non pulvinar. Faucibus a pellentesque sit amet porttitor eget. A erat nam at lectus. Dolor sit amet consectetur adipiscing. Massa eget egestas purus viverra accumsan. Neque volutpat ac tincidunt vitae semper. Elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Lacinia quis vel eros donec ac odio tempor orci.
+        With this app you can easily calculate your BMI and your training zones based on your lactate threshold or your FTP or pace for cycling and running.\n\n
+        - The zones are calculated using the Joe Friel\'s formulas for running and cycling using your lactate threshold heart rate, pace or your FTP.\n\n
+        - You can also use your maximum heart rate, but this method is so accurate.\n\n
+        - To use this app you only need to choose what you want to calculate from the top left menu, choose the units you prefer for the BMI calculation or the method you want for the training zones.\n\n
+        - IF YOU WANT TO IMPROVE YOUR FITNESS LEVEL, SEE A PHYSICIAN BEFORE ATTEMPTING ANY PHYSICAL ACTIVITY AND CONTACT A PERSONAL TRAINER. THEY WILL GUIDE YOU ON YOUR TRAINING PLAN.\n\n
     </string>
     <string name="exit">Exit</string>
-
     <string name="metric">Metric</string>
     <string name="imperial" translatable="false">Imperial</string>
     <string name="height">Height</string>
@@ -29,5 +32,19 @@
     <string name="hr">(bpm)</string>
     <string name="bike">Bike</string>
     <string name="run">Run</string>
+    <string name="recovery">Recovery</string>
+    <string name="aerobic">Aerobic</string>
+    <string name="endurance">Endurance</string>
+    <string name="tempo" translatable="false">Tempo</string>
+    <string name="subThreshold">Sub Threshold</string>
+    <string name="threshold">Threshold</string>
+    <string name="superthreshold">Super Threshold</string>
+    <string name="vo2max" translatable="false">VO2 Max</string>
+    <string name="aerobicCapacity">Aerobic Capacity</string>
+    <string name="anaerobicCapacity">Anaerobic Capacity</string>
+    <string name="healthyHeart">Healthy Heart</string>
+    <string name="temperate">Temperate</string>
+    <string name="aerobicThreshold">Aerobic Threshold</string>
+    <string name="redLine">Red Line</string>
 
 </resources>

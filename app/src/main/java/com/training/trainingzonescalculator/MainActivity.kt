@@ -10,28 +10,20 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.training.trainingzonescalculator.ui.theme.TrainingZonesCalculatorTheme
 
 class MainActivity : ComponentActivity() {
 
-    @ExperimentalComposeUiApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -42,7 +34,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@ExperimentalComposeUiApi
 @Composable
 fun TrainingZonesCalcApp() {
     val activity = (LocalContext.current as? Activity)
@@ -133,7 +124,6 @@ fun TrainingZonesCalcApp() {
     }
 }
 
-@ExperimentalComposeUiApi
 @Composable
 private fun ShowSelectedScreen(selectedOption: Int) {
     when (selectedOption) {
@@ -144,7 +134,6 @@ private fun ShowSelectedScreen(selectedOption: Int) {
     }
 }
 
-@ExperimentalComposeUiApi
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {

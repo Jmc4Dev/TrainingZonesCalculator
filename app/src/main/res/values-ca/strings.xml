@@ -18,7 +18,19 @@
     <string name="wrong_data">Dades incorrectes</string>
     <string name="hr">(ppm)</string>
     <string name="your_zones">Zones d\'Entrenament</string>
-    <string name="bike">Bici</string>
+    <string name="bike">Ciclisme</string>
     <string name="run">Correr</string>
     <string name="watts">Watts</string>
+    <string name="recovery">Recuperació</string>
+    <string name="aerobic">Aeròbic</string>
+    <string name="threshold">Llindar</string>
+    <string name="superthreshold">Sobre Llindar</string>
+    <string name="aerobicCapacity">Capacitat Aeròbica</string>
+    <string name="anaerobicCapacity">Capacitat Anaeròbica</string>
+    <string name="endurance">Resistència</string>
+    <string name="subThreshold">Sota Llindar</string>
+    <string name="healthyHeart">Salud</string>
+    <string name="temperate">Moderat</string>
+    <string name="aerobicThreshold">Llindar Aeròbic</string>
+    <string name="redLine">Línia Vermella</string>
 </resources>

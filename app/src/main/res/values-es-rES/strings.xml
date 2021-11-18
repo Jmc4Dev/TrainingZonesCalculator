@@ -18,7 +18,19 @@
     <string name="wrong_data">Datos incorrectos</string>
     <string name="hr">(lpm)</string>
     <string name="your_zones">Zonas de Entrenamiento</string>
-    <string name="bike">Bici</string>
+    <string name="bike">Ciclismo</string>
     <string name="run">Correr</string>
     <string name="watts">Vatios</string>
+    <string name="recovery">Recuperación</string>
+    <string name="aerobic">Aeróbico</string>
+    <string name="threshold">Umbral</string>
+    <string name="superthreshold">Sobre Umbral</string>
+    <string name="aerobicCapacity">Capacidad Aeróbica</string>
+    <string name="anaerobicCapacity">Capacidad Anaeróbica</string>
+    <string name="endurance">Resistencia</string>
+    <string name="subThreshold">Bajo Umbral</string>
+    <string name="healthyHeart">Salud</string>
+    <string name="temperate">Moderado</string>
+    <string name="aerobicThreshold">Umbral Aeróbico</string>
+    <string name="redLine">Linea Roja</string>
 </resources>

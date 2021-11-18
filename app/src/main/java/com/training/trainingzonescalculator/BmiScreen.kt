@@ -1,26 +1,21 @@
 package com.training.trainingzonescalculator
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -31,7 +26,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-@ExperimentalComposeUiApi
 @Composable
 fun BmiScreen() {
     /*
@@ -53,7 +47,6 @@ fun BmiScreen() {
         listOf(stringResource(id = R.string.metric), stringResource(id = R.string.imperial))
     val (selectedOption, onOptionSelected) = remember { mutableStateOf(radioOptions[0]) }
     val focusManager = LocalFocusManager.current
-    val keyboardController = LocalSoftwareKeyboardController.current
 
     Column(
         modifier = Modifier
@@ -94,7 +87,7 @@ fun BmiScreen() {
             }
         }
 
-        TextField(
+        OutlinedTextField(
             modifier = Modifier
                 .padding(top = 16.dp),
             value = height,
@@ -111,15 +104,14 @@ fun BmiScreen() {
             },
             singleLine = true,
             keyboardActions = KeyboardActions(
-                onDone = { focusManager.moveFocus(FocusDirection.Down) },
                 onNext = { focusManager.moveFocus(FocusDirection.Down) }),
             keyboardOptions = KeyboardOptions.Default.copy(
-                imeAction = ImeAction.Done,
+                imeAction = ImeAction.Next,
                 keyboardType = KeyboardType.Number
             )
         )
 
-        TextField(
+        OutlinedTextField(
             modifier = Modifier
                 .padding(top = 16.dp, bottom = 16.dp),
             value = weight,
@@ -136,8 +128,10 @@ fun BmiScreen() {
             },
             singleLine = true,
             keyboardActions = KeyboardActions(
-                onDone = { focusManager.clearFocus() },
-                onNext = { focusManager.clearFocus() }),
+                onDone = {
+                    focusManager.clearFocus()
+                    bmi = calculateBmi(weight, height, selectedOption, imperialStr, errorStr)
+                }),
             keyboardOptions = KeyboardOptions.Default.copy(
                 imeAction = ImeAction.Done,
                 keyboardType = KeyboardType.Number
@@ -152,7 +146,6 @@ fun BmiScreen() {
                 .background(MaterialTheme.colors.primarySurface)
                 .padding(vertical = 8.dp, horizontal = 24.dp)
                 .clickable {
-                    keyboardController?.hide()
                     bmi = calculateBmi(weight, height, selectedOption, imperialStr, errorStr)
                 },
             fontSize = 20.sp,
