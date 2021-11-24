@@ -24,13 +24,18 @@
     <string name="recovery">Recuperación</string>
     <string name="aerobic">Aeróbico</string>
     <string name="threshold">Umbral</string>
-    <string name="superthreshold">Sobre Umbral</string>
+    <string name="superthreshold">Supraumbral</string>
     <string name="aerobicCapacity">Capacidad Aeróbica</string>
     <string name="anaerobicCapacity">Capacidad Anaeróbica</string>
     <string name="endurance">Resistencia</string>
-    <string name="subThreshold">Bajo Umbral</string>
+    <string name="subThreshold">Subumbral</string>
     <string name="healthyHeart">Salud</string>
     <string name="temperate">Moderado</string>
     <string name="aerobicThreshold">Umbral Aeróbico</string>
-    <string name="redLine">Linea Roja</string>
+    <string name="redLine">Esfuerzo máximo</string>
+    <string name="instructions">Instrucciones</string>
+    <string name="disclaimer">AVISO</string>
+    <string name="help_text">"Con esta aplicación podrás calcular fácilmente tu Índice de Masa Corporal y tus zonas de entrenamiento basadas en tu umbral de lactato, en tu UPF para ciclismo o en tu ritmo de carrera a pie.\n\n  - Las zonas se calculan usando las fórmulas de Joe Friel.\n\n  - También puedes usar tu frecuencia cardiaca máxima, pero este método es menos preciso."</string>
+    <string name="instructions_text">"Para usar esta aplicación solo tienes que escoger qué quieres calcular con el menú de la parte superior izquierda, poner las unidades para el cálculo de tu IMC o el método para las zonas de entrenamiento."</string>
+    <string name="disclaimer_text">"SI QUIERES MEJORAR TU ESTADO DE FORMA, VISITA A UN MÉDICO ESPECIALISTA EN DEPORTE ANTES DE EMPEZAR CUALQUIER PROGRAMA DE ENTRENAMIENTO Y/O CONTACTA CON UN ENTRENADOR PERSONAL. ELLOS TE GUIARÁN EN TU ENTRENAMIENTO."</string>
 </resources>

@@ -24,13 +24,18 @@
     <string name="recovery">Recuperació</string>
     <string name="aerobic">Aeròbic</string>
     <string name="threshold">Llindar</string>
-    <string name="superthreshold">Sobre Llindar</string>
+    <string name="superthreshold">Suprallindar</string>
     <string name="aerobicCapacity">Capacitat Aeròbica</string>
     <string name="anaerobicCapacity">Capacitat Anaeròbica</string>
     <string name="endurance">Resistència</string>
-    <string name="subThreshold">Sota Llindar</string>
+    <string name="subThreshold">Subllindar</string>
     <string name="healthyHeart">Salud</string>
     <string name="temperate">Moderat</string>
     <string name="aerobicThreshold">Llindar Aeròbic</string>
-    <string name="redLine">Línia Vermella</string>
+    <string name="redLine">Esforç màxim</string>
+    <string name="instructions">Instruccions</string>
+    <string name="disclaimer">AVÍS</string>
+    <string name="help_text">"Amb aquesta aplicació podràs calcular fàcilment el teu Índex de Massa Corporal i les teves zones d'entrenament basades en el teu llindar de lactàt, en el teu LPF per ciclisme o en el teu ritme de cursa a peu.\n\n  - Les zones es calculen fent servir les fórmules de Joe Friel.\n\n  - També pots fer servir la teva freqüència cardíaca màxima, però aquest mètode és menys precís. "</string>
+    <string name="instructions_text">"Per fer servir aquesta aplicació només has d'escollir què vols calcular amb el menú de la part superior esquerra, escollir les unitats pel càlcul de l'IMC o el mètode per les zones d'entrenament."</string>
+    <string name="disclaimer_text">"SI VOLS MILLORAR EL TEU ESTAT DE FORMA, VISITA UN METGE ESPECIALISTA EN ESPORT ABANS DE COMENÇAR QUALSEVOL PROGRAMA D'ENTRENAMENT I/O CONTACTA AMB UN ENTRENADOR PERSONAL. ELLS ET GUIARAN EN EL TEU ENTRENAMENT."</string>
 </resources>

@@ -9,13 +9,11 @@
     <string name="your_zones">Your Training Zones</string>
     <string name="zones">Zones</string>
     <string name="help">Help</string>
-    <string name="help_text" translatable="false">
-        With this app you can easily calculate your BMI and your training zones based on your lactate threshold or your FTP or pace for cycling and running.\n\n
-        - The zones are calculated using the Joe Friel\'s formulas for running and cycling using your lactate threshold heart rate, pace or your FTP.\n\n
-        - You can also use your maximum heart rate, but this method is so accurate.\n\n
-        - To use this app you only need to choose what you want to calculate from the top left menu, choose the units you prefer for the BMI calculation or the method you want for the training zones.\n\n
-        - IF YOU WANT TO IMPROVE YOUR FITNESS LEVEL, SEE A PHYSICIAN BEFORE ATTEMPTING ANY PHYSICAL ACTIVITY AND CONTACT A PERSONAL TRAINER. THEY WILL GUIDE YOU ON YOUR TRAINING PLAN.\n\n
-    </string>
+    <string name="help_text">With this app you can easily calculate your BMI and your training zones based on your lactate threshold or your FTP or pace for cycling and running.\n\n  - The zones are calculated using the Joe Friel\'s formulas.\n\n  - You can also use your maximum heart rate, but this method is less accurate.</string>
+    <string name="instructions">Instructions</string>
+    <string name="instructions_text">To use this app you only need to choose what you want to calculate from the top left menu, choose the units you prefer for the BMI calculation or the method you want for the training zones.</string>
+    <string name="disclaimer">DISCLAIMER</string>
+    <string name="disclaimer_text">IF YOU WANT TO IMPROVE YOUR FITNESS LEVEL, SEE A PHYSICIAN BEFORE ATTEMPTING ANY PHYSICAL ACTIVITY AND/OR CONTACT A PERSONAL TRAINER. THEY WILL GUIDE YOU THROUGH YOUR TRAINING PLAN.</string>
     <string name="exit">Exit</string>
     <string name="metric">Metric</string>
     <string name="imperial" translatable="false">Imperial</string>

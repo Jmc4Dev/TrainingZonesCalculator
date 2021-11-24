@@ -1,6 +1,8 @@
 package com.training.trainingzonescalculator
 
+import android.content.Context
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -15,6 +17,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusDirection
@@ -33,6 +36,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.getSystemService
 import com.training.trainingzonescalculator.models.*
 import com.training.trainingzonescalculator.ui.theme.TrainingZonesCalculatorTheme
 import kotlin.math.roundToInt
@@ -49,6 +53,7 @@ val zoneColors = arrayListOf(
         Color(0xffff01cc)
 )
 
+@ExperimentalComposeUiApi
 @Composable
 fun ZonesScreen() {
     /*
@@ -78,6 +83,7 @@ fun ZonesScreen() {
             )
     val (selectedOption, onOptionSelected) = remember { mutableStateOf(radioOptions[0]) }
     val focusManager = LocalFocusManager.current
+    val keyboardController = LocalSoftwareKeyboardController.current
     lateinit var zoneDescriptions: ArrayList<String>
 
     Column(
@@ -150,11 +156,12 @@ fun ZonesScreen() {
 
         }
 
-        Column(
+        Row(
                 modifier = Modifier
                         .selectableGroup()
-                        .wrapContentWidth(align = Alignment.CenterHorizontally),
-                horizontalAlignment = Alignment.Start
+                        .wrapContentWidth(align = Alignment.CenterHorizontally)
+                        .padding(vertical = 16.dp),
+                verticalAlignment = Alignment.CenterVertically
         ) {
             radioOptions.forEach { text ->
                 Row(
@@ -170,7 +177,7 @@ fun ZonesScreen() {
                                         },
                                         role = Role.RadioButton
                                 )
-                                .padding(horizontal = 8.dp),
+                                .padding(horizontal = 16.dp),
                         verticalAlignment = Alignment.CenterVertically
                 ) {
                     RadioButton(
@@ -329,6 +336,7 @@ fun ZonesScreen() {
                         .background(MaterialTheme.colors.primarySurface)
                         .padding(vertical = 8.dp, horizontal = 24.dp)
                         .clickable {
+                            keyboardController?.hide()
                             calcType = when (selectedOption) {
                                 maxHrStr -> 1
                                 lthrStr -> 2
@@ -343,23 +351,12 @@ fun ZonesScreen() {
                 textAlign = TextAlign.Center
         )
 
-        Text(
-                text = stringResource(id = R.string.your_zones),
-                modifier = Modifier
-                        .padding(8.dp)
-                        .fillMaxWidth(),
-                fontSize = 26.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Black,
-                textAlign = TextAlign.Center
-        )
-
         LazyColumn {
             items(zones) { zone ->
                 Row(
                         modifier = Modifier
                                 .background(zone.zoneColor)
-                                .padding(horizontal = 8.dp, vertical = 4.dp)
+                                .padding(horizontal = 8.dp, vertical = 8.dp)
                                 .fillMaxWidth()
                                 .wrapContentHeight(align = Alignment.CenterVertically),
                         horizontalArrangement = Arrangement.SpaceEvenly
@@ -524,6 +521,7 @@ private fun obtainZones(
 }
 
 @Preview(showBackground = true)
+@ExperimentalComposeUiApi
 @Composable
 fun DefaultZonesScreenPreviews() {
     TrainingZonesCalculatorTheme {
