@@ -1,6 +1,7 @@
 package com.training.trainingzonescalculator
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
@@ -47,138 +48,138 @@ fun BmiScreen() {
     val imperialStr = stringResource(id = R.string.imperial)
     val errorStr = stringResource(id = R.string.wrong_data)
     val radioOptions =
-            listOf(stringResource(id = R.string.metric), stringResource(id = R.string.imperial))
+        listOf(stringResource(id = R.string.metric), stringResource(id = R.string.imperial))
     val (selectedOption, onOptionSelected) = remember { mutableStateOf(radioOptions[0]) }
     val focusManager = LocalFocusManager.current
     val keyboardController = LocalSoftwareKeyboardController.current
 
     Column(
-            modifier = Modifier
-                    .fillMaxSize()
-                    .padding(top = 16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Top
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Top
     ) {
         Column(
-                modifier = Modifier
-                        .selectableGroup()
-                        .wrapContentWidth(align = Alignment.CenterHorizontally),
-                horizontalAlignment = Alignment.Start
+            modifier = Modifier
+                .selectableGroup()
+                .wrapContentWidth(align = Alignment.CenterHorizontally),
+            horizontalAlignment = Alignment.Start
         ) {
             radioOptions.forEach { text ->
                 Row(
-                        Modifier
-                                .wrapContentWidth(align = Alignment.Start)
-                                .height(36.dp)
-                                .selectable(
-                                        selected = (text == selectedOption),
-                                        onClick = { onOptionSelected(text) },
-                                        role = Role.RadioButton
-                                )
-                                .padding(horizontal = 12.dp),
-                        verticalAlignment = Alignment.CenterVertically
+                    Modifier
+                        .wrapContentWidth(align = Alignment.Start)
+                        .height(36.dp)
+                        .selectable(
+                            selected = (text == selectedOption),
+                            onClick = { onOptionSelected(text) },
+                            role = Role.RadioButton
+                        )
+                        .padding(horizontal = 12.dp),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     RadioButton(
-                            selected = (text == selectedOption),
-                            onClick = null // null recommended for accessibility with screenreaders
+                        selected = (text == selectedOption),
+                        onClick = null // null recommended for accessibility with screenreaders
                     )
                     Text(
-                            text = text,
-                            style = MaterialTheme.typography.body1.merge(),
-                            modifier = Modifier.padding(start = 16.dp)
+                        text = text,
+                        style = MaterialTheme.typography.body1.merge(),
+                        modifier = Modifier.padding(start = 16.dp)
                     )
                 }
             }
         }
 
         OutlinedTextField(
-                modifier = Modifier
-                        .padding(top = 16.dp),
-                value = height,
-                onValueChange = { height = it },
-                label = {
-                    Text(
-                            text = if (selectedOption == stringResource(id = R.string.imperial)) {
-                                stringResource(id = R.string.height) + " " + stringResource(id = R.string.inches)
-                            } else {
-                                stringResource(id = R.string.height) + " " + stringResource(id = R.string.centimeters)
-                            },
-                            color = colorResource(id = R.color.purple_700)
-                    )
-                },
-                singleLine = true,
-                keyboardActions = KeyboardActions(
-                        onNext = { focusManager.moveFocus(FocusDirection.Down) }),
-                keyboardOptions = KeyboardOptions.Default.copy(
-                        imeAction = ImeAction.Next,
-                        keyboardType = KeyboardType.Number
+            modifier = Modifier
+                .padding(top = 16.dp),
+            value = height,
+            onValueChange = { height = it },
+            label = {
+                Text(
+                    text = if (selectedOption == stringResource(id = R.string.imperial)) {
+                        stringResource(id = R.string.height) + " " + stringResource(id = R.string.inches)
+                    } else {
+                        stringResource(id = R.string.height) + " " + stringResource(id = R.string.centimeters)
+                    },
+                    color = colorResource(id = R.color.purple_700)
                 )
+            },
+            singleLine = true,
+            keyboardActions = KeyboardActions(
+                onNext = { focusManager.moveFocus(FocusDirection.Down) }),
+            keyboardOptions = KeyboardOptions.Default.copy(
+                imeAction = ImeAction.Next,
+                keyboardType = KeyboardType.Number
+            )
         )
 
         OutlinedTextField(
-                modifier = Modifier
-                        .padding(top = 16.dp, bottom = 16.dp),
-                value = weight,
-                onValueChange = { weight = it },
-                label = {
-                    Text(
-                            text = if (selectedOption == stringResource(id = R.string.imperial)) {
-                                stringResource(id = R.string.weight) + " " + stringResource(id = R.string.pounds)
-                            } else {
-                                stringResource(id = R.string.weight) + " " + stringResource(id = R.string.kg)
-                            },
-                            color = colorResource(id = R.color.purple_700)
-                    )
-                },
-                singleLine = true,
-                keyboardActions = KeyboardActions(
-                        onDone = {
-                            focusManager.clearFocus()
-                            bmi = calculateBmi(weight, height, selectedOption, imperialStr, errorStr)
-                        }),
-                keyboardOptions = KeyboardOptions.Default.copy(
-                        imeAction = ImeAction.Done,
-                        keyboardType = KeyboardType.Number
+            modifier = Modifier
+                .padding(top = 16.dp, bottom = 16.dp),
+            value = weight,
+            onValueChange = { weight = it },
+            label = {
+                Text(
+                    text = if (selectedOption == stringResource(id = R.string.imperial)) {
+                        stringResource(id = R.string.weight) + " " + stringResource(id = R.string.pounds)
+                    } else {
+                        stringResource(id = R.string.weight) + " " + stringResource(id = R.string.kg)
+                    },
+                    color = colorResource(id = R.color.purple_700)
                 )
+            },
+            singleLine = true,
+            keyboardActions = KeyboardActions(
+                onDone = {
+                    focusManager.clearFocus()
+                    bmi = calculateBmi(weight, height, selectedOption, imperialStr, errorStr)
+                }),
+            keyboardOptions = KeyboardOptions.Default.copy(
+                imeAction = ImeAction.Done,
+                keyboardType = KeyboardType.Number
+            )
         )
 
         Text(
-                text = stringResource(id = R.string.calculate),
-                modifier = Modifier
-                        .padding(vertical = 8.dp, horizontal = 24.dp)
-                        .clip(RoundedCornerShape(15.dp))
-                        .background(MaterialTheme.colors.primarySurface)
-                        .padding(vertical = 8.dp, horizontal = 24.dp)
-                        .clickable {
-                            keyboardController?.hide()
-                            bmi = calculateBmi(weight, height, selectedOption, imperialStr, errorStr)
-                        },
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White,
-                textAlign = TextAlign.Center
+            text = stringResource(id = R.string.calculate),
+            modifier = Modifier
+                .padding(vertical = 8.dp, horizontal = 24.dp)
+                .clip(RoundedCornerShape(15.dp))
+                .background(MaterialTheme.colors.primarySurface)
+                .padding(vertical = 8.dp, horizontal = 24.dp)
+                .clickable {
+                    keyboardController?.hide()
+                    bmi = calculateBmi(weight, height, selectedOption, imperialStr, errorStr)
+                },
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White,
+            textAlign = TextAlign.Center
         )
 
         Text(
-                text = stringResource(id = R.string.your_bmi),
-                modifier = Modifier
-                        .padding(16.dp)
-                        .fillMaxWidth(),
-                fontSize = 26.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Black,
-                textAlign = TextAlign.Center
+            text = stringResource(id = R.string.your_bmi),
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth(),
+            fontSize = 26.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black,
+            textAlign = TextAlign.Center
         )
 
         Text(
-                text = if (bmi != stringResource(id = R.string.wrong_data)) bmi else "",
-                modifier = Modifier
-                        .padding(24.dp)
-                        .fillMaxWidth(),
-                fontSize = 82.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Black,
-                textAlign = TextAlign.Center
+            text = if (bmi != stringResource(id = R.string.wrong_data)) bmi else "",
+            modifier = Modifier
+                .padding(24.dp)
+                .fillMaxWidth(),
+            fontSize = 82.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black,
+            textAlign = TextAlign.Center
         )
     }
 }
@@ -188,11 +189,11 @@ fun BmiScreen() {
     Formula (English System): [weight (lb) / height (in) / height (in)] x 703
 */
 private fun calculateBmi(
-        weight: String,
-        height: String,
-        selectedOption: String,
-        imperialStr: String,
-        errorStr: String
+    weight: String,
+    height: String,
+    selectedOption: String,
+    imperialStr: String,
+    errorStr: String
 ): String {
     val bmiCalculated = try {
         if (selectedOption == imperialStr) {

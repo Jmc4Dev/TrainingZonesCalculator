@@ -44,13 +44,13 @@ import kotlin.math.roundToInt
 
 val zoneNames = arrayListOf("Z1", "Z2", "Z3", "Z4", "Z5", "Z5b", "Z5c")
 val zoneColors = arrayListOf(
-        Color.Cyan,
-        Color(0xff0848e8),
-        Color.Green,
-        Color.Yellow,
-        Color(0xffe87f07),
-        Color.Red,
-        Color(0xffff01cc)
+        Color(0xff0508be),
+        Color(0xff025fe8),
+        Color(0xff05860d),
+        Color(0xffcaca00),
+        Color(0xfffe7c00),
+        Color(0xffd65001),
+        Color(0xfff20303),
 )
 
 @ExperimentalComposeUiApi
@@ -108,7 +108,7 @@ fun ZonesScreen() {
                             .background(
                                     color =
                                     if (sport == "Run")
-                                        colorResource(id = R.color.light_grey)    //MaterialTheme.colors.surface
+                                        colorResource(id = R.color.background_light_blue)    //MaterialTheme.colors.surface
                                     else
                                         colorResource(id = R.color.white)     //MaterialTheme.colors.secondary
                             )
@@ -140,7 +140,7 @@ fun ZonesScreen() {
                                     if (sport == "Run")
                                         colorResource(id = R.color.white)     //MaterialTheme.colors.secondary
                                     else
-                                        colorResource(id = R.color.light_grey)   //MaterialTheme.colors.surface
+                                        colorResource(id = R.color.background_light_blue)   //MaterialTheme.colors.surface
                             )
                             .clickable {
                                 sport = "Run"
@@ -367,7 +367,8 @@ fun ZonesScreen() {
                                     .weight(0.14f),
                             text = zone.zoneText,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 17.sp
+                            fontSize = 17.sp,
+                            color = Color.White
                     )
                     Text(
                             modifier = Modifier
@@ -375,7 +376,8 @@ fun ZonesScreen() {
                                     .weight(0.48f),
                             text = zone.zoneDescription,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 15.sp
+                            fontSize = 15.sp,
+                            color = Color.White
                     )
                     Text(
                             modifier = Modifier
@@ -395,7 +397,8 @@ fun ZonesScreen() {
                             },
                             fontWeight = FontWeight.Bold,
                             textAlign = TextAlign.End,
-                            fontSize = 17.sp
+                            fontSize = 17.sp,
+                            color = Color.White
                     )
                     Text(
                             modifier = Modifier
@@ -415,7 +418,8 @@ fun ZonesScreen() {
                             },
                             fontWeight = FontWeight.Bold,
                             textAlign = TextAlign.End,
-                            fontSize = 17.sp
+                            fontSize = 17.sp,
+                            color = Color.White
                     )
                 }
             }
@@ -498,9 +502,13 @@ private fun obtainZones(
                         minLimit = inputData * limitsList[index].minLimit,
                         maxLimit = inputData * limitsList[index].maxLimit,
                         zoneColor = if (limitsListSize == 5 && index == 4)
-                            zoneColors[index+1]                      // For Max HR the last color must be red
-                        else
-                            zoneColors[index],
+                            zoneColors[index+2]                      // For Max HR the last color must be red
+                        else {
+                            if (limitsListSize == 6 && index == 5)
+                                zoneColors[index+1]
+                            else
+                                zoneColors[index]
+                        },
                         zoneText =
                         if (limitsListSize == 6 && index == 5)       // Description for the 6th element when
                             "Z6"                                     // obtaining 6 different zones

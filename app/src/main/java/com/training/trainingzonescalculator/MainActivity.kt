@@ -21,6 +21,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.training.trainingzonescalculator.ui.theme.TrainingZonesCalculatorTheme
 
 @ExperimentalComposeUiApi
@@ -44,7 +48,7 @@ fun TrainingZonesCalcApp() {
     var selectedOption by remember { mutableStateOf(1)}
 
     // A surface container using the 'background' color from the theme
-    Surface(color = colorResource(id = R.color.light_grey)) {
+    Surface(color = colorResource(id = R.color.background_light_blue)) {
         Column(
             modifier = Modifier
                 .fillMaxSize(),
@@ -118,6 +122,18 @@ fun TrainingZonesCalcApp() {
                     // RowScope here, so these icons will be placed horizontally
                     IconButton(onClick = { activity?.finish() }) {
                         Icon(Icons.Filled.Close, contentDescription = "Localized description")
+                    }
+                }
+            )
+
+            AndroidView(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                factory = { context ->
+                    AdView(context).apply {
+                        adSize = AdSize.BANNER
+                        adUnitId = context.getString(R.string.ad_id_banner)
+                        loadAd(AdRequest.Builder().build())
                     }
                 }
             )
