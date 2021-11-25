@@ -171,7 +171,7 @@ fun BmiScreen() {
         )
 
         Text(
-                text = bmi,
+                text = if (bmi != stringResource(id = R.string.wrong_data)) bmi else "",
                 modifier = Modifier
                         .padding(24.dp)
                         .fillMaxWidth(),

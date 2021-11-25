@@ -367,7 +367,7 @@ fun ZonesScreen() {
                                     .weight(0.14f),
                             text = zone.zoneText,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 17.sp,
+                            fontSize = 17.sp
                     )
                     Text(
                             modifier = Modifier
@@ -375,7 +375,7 @@ fun ZonesScreen() {
                                     .weight(0.48f),
                             text = zone.zoneDescription,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 15.sp,
+                            fontSize = 15.sp
                     )
                     Text(
                             modifier = Modifier
