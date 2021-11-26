@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -26,9 +27,15 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.training.trainingzonescalculator.ui.theme.TrainingZonesCalculatorTheme
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
+
 
 @ExperimentalComposeUiApi
 class MainActivity : ComponentActivity() {
+
+    private var mFirebaseAnalytics: FirebaseAnalytics? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +44,8 @@ class MainActivity : ComponentActivity() {
                 TrainingZonesCalcApp()
             }
         }
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = Firebase.analytics    //FirebaseAnalytics.getInstance(this)
     }
 }
 
@@ -64,7 +73,8 @@ fun TrainingZonesCalcApp() {
                         else
                             stringResource(id = R.string.app_name)
                         ,
-                        fontSize = 18.sp
+                        fontSize = 22.sp,
+                        textAlign = TextAlign.Center
                     )
                 },
                 navigationIcon = {
@@ -116,12 +126,6 @@ fun TrainingZonesCalcApp() {
                                 color = Color.Black,
                                 fontSize = 15.sp)
                         }
-                    }
-                },
-                actions = {
-                    // RowScope here, so these icons will be placed horizontally
-                    IconButton(onClick = { activity?.finish() }) {
-                        Icon(Icons.Filled.Close, contentDescription = "Localized description")
                     }
                 }
             )

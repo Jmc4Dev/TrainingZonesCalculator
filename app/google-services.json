@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "733416165647",
+    "project_id": "training-zones-calculator",
+    "storage_bucket": "training-zones-calculator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733416165647:android:a62486e88ee4ce3ced6e7a",
+        "android_client_info": {
+          "package_name": "com.training.trainingzonescalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733416165647-a0pm2ga5gptbhdfppvad6knejr9ocjln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjeWlJThtg_ZMMrDzgvupTRfYOq1PERPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733416165647-a0pm2ga5gptbhdfppvad6knejr9ocjln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
