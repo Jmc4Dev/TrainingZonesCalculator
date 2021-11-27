@@ -44,7 +44,7 @@
     <string name="temperate">Temperate</string>
     <string name="aerobicThreshold">Aerobic Threshold</string>
     <string name="redLine">Red Line</string>
-    <string name="ad_id_banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="ad_id_banner_real" translatable="false">ca-app-pub-6236745895375991/8481336730</string>
+    <string name="ad_id_banner_test" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_id_banner" translatable="false">ca-app-pub-6236745895375991/8481336730</string>
 
 </resources>

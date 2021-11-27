@@ -24,8 +24,8 @@
         </activity>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />       <!-- Test ID  -->
-  <!--      android:value="ca-app-pub-6236745895375991~8704466507" /> -->   <!-- Production ID  -->
+            android:value="ca-app-pub-6236745895375991~8704466507" />   <!-- Production ID  -->
+     <!--   android:value="ca-app-pub-3940256099942544~3347511713" /> -->      <!-- Test ID  -->
     </application>
 
 </manifest>
